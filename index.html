@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Українська мова</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background-color: #004080;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #003366;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tabs button {
+            background-color: #0073e6;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-right: 5px;
+        }
+
+        .tabs button:hover {
+            background-color: #005bb5;
+        }
+
+        .tabs button.active {
+            background-color: #003366;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Все про українську мову</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#про-мову">Про мову</a></li>
+        <li><a href="#історія">Історія</a></li>
+        <li><a href="#граматика">Граматика</a></li>
+        <li><a href="#цікаві-факти">Цікаві факти</a></li>
+    </ul>
+</nav>
+
+<div class="tabs">
+    <button class="tablinks active" onclick="openTab(event, 'ПроМову')">Про мову</button>
+    <button class="tablinks" onclick="openTab(event, 'Історія')">Історія</button>
+    <button class="tablinks" onclick="openTab(event, 'Граматика')">Граматика</button>
+    <button class="tablinks" onclick="openTab(event, 'ЦікавіФакти')">Цікаві факти</button>
+</div>
+
+<div id="ПроМову" class="tab-content active">
+    <h2>Про українську мову</h2>
+    <p>Українська мова є державною мовою України. Вона належить до слов'янської мовної групи та має багату історію розвитку.</p>
+</div>
+
+<div id="Історія" class="tab-content">
+    <h2>Історія української мови</h2>
+    <p>Українська мова формувалася протягом століть. Її корені сягають ще давньоруської мови, а літературна українська мова почала розвиватися у XIX столітті.</p>
+</div>
+
+<div id="Граматика" class="tab-content">
+    <h2>Граматика української мови</h2>
+    <p>Українська мова має складну граматичну систему, що включає відмінки, часи, роди та інші граматичні категорії.</p>
+</div>
+
+<div id="ЦікавіФакти" class="tab-content">
+    <h2>Цікаві факти про українську мову</h2>
+    <ul>
+        <li>Українська мова є однією з наймелодійніших мов у світі.</li>
+        <li>В українській мові найбільше слів на літеру "П".</li>
+        <li>Перша друкована книга українською мовою вийшла в 1574 році.</li>
+    </ul>
+</div>
+
+<footer>
+    <p>© 2024 Все про українську мову</p>
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
